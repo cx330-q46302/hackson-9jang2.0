@@ -10,7 +10,7 @@ var gem_scene = preload("res://gem.tscn")
 func _ready():
 	player = get_tree().root.find_child("Player", true, false)
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	if player:
 		
 		# 如果正在攻擊中，就不執行移動和重複播放動畫的邏輯

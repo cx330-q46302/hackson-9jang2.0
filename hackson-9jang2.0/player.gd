@@ -27,19 +27,34 @@ func heal(amount):
 
 func take_damage(amount):
 	hp -= amount
+	health_bar.value = hp
 	print("被怪物攻擊！目前", hp)
+	if hp <= 0:
+		die()
 
+func die():
+	# 1. 產生 Game Over 畫面# 注意：請確認檔案面板裡真的有一個檔案叫做 game_over.tscn
+	var scene = preload("res://game_over.tscn") 
+	if scene:
+		var game_over_instance = scene.instantiate() # 必須實例化！
+		# 2. 加入到當前的場景樹中
+		get_tree().root.add_child(game_over_instance)
+		# 3. 暫停遊戲邏輯
+		get_tree().paused = true
+	else:
+		print("錯誤：找不到 game_over.tscn 檔案，請檢查路徑與檔名！")
+	
 # 每一幀 (Frame) 都會執行一次的函數，delta 是兩幀之間的時間間隔
 func _input(event):
-	if event.is_action_pressed("attack_b"): # 預設是空白鍵或 Enter
+	if event.is_action_pressed("attack_b"): 
 			shoot()
 
 func shoot():
 	# 1. 產生一個大招
 	var bigmove = bigmove_scene.instantiate()
-	# 2. 把火球放到遊戲世界裡 (通常放在根節點或是主場景)
+	# 2. 放到遊戲世界裡 (通常放在根節點或是主場景)
 	get_tree().current_scene.add_child(bigmove)
-	# 3. 把火球的位置設在玩家這
+	# 3. 位置設在玩家這
 	bigmove.position = self.position
 
 
