@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://28ls3jpicor8"]
+
+[ext_resource type="Script" uid="uid://cung1bbhdy0rd" path="res://gem.gd" id="1_edvqy"]
+[ext_resource type="Texture2D" uid="uid://bf2loskeumymr" path="res://art/BE3.png" id="2_xp2mg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_whk3i"]
+radius = 2.0
+height = 4.0
+
+[node name="Gem" type="Area2D" unique_id=94468940]
+script = ExtResource("1_edvqy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=258678399]
+scale = Vector2(0.028125009, 0.03125)
+texture = ExtResource("2_xp2mg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2044867497]
+shape = SubResource("CapsuleShape2D_whk3i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://25tkvd5fub8i"]
+
+[ext_resource type="Texture2D" uid="uid://0e1fdo5tcqtw" path="res://art/monsters/Laser_sheet.png" id="1_er6ne"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_abvp2"]
+radius = 12.0
+height = 270.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlirx"]
+atlas = ExtResource("1_er6ne")
+region = Rect2(0, 100, 300, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hiupk"]
+atlas = ExtResource("1_er6ne")
+region = Rect2(0, 800, 300, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvgad"]
+atlas = ExtResource("1_er6ne")
+region = Rect2(0, 700, 300, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej5qb"]
+atlas = ExtResource("1_er6ne")
+region = Rect2(0, 200, 300, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kswnc"]
+atlas = ExtResource("1_er6ne")
+region = Rect2(0, 300, 300, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cupb2"]
+atlas = ExtResource("1_er6ne")
+region = Rect2(0, 600, 300, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25hic"]
+atlas = ExtResource("1_er6ne")
+region = Rect2(0, 400, 300, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvc5n"]
+atlas = ExtResource("1_er6ne")
+region = Rect2(0, 500, 300, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpdfg"]
+atlas = ExtResource("1_er6ne")
+region = Rect2(0, 900, 300, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvib6"]
+atlas = ExtResource("1_er6ne")
+region = Rect2(0, 1000, 300, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g60y3"]
+atlas = ExtResource("1_er6ne")
+region = Rect2(0, 1100, 300, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lylx"]
+atlas = ExtResource("1_er6ne")
+region = Rect2(0, 1200, 300, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2eot2"]
+atlas = ExtResource("1_er6ne")
+region = Rect2(0, 1300, 300, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2fxu"]
+atlas = ExtResource("1_er6ne")
+region = Rect2(0, 1400, 300, 98)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ej1mc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlirx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hiupk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvgad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej5qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kswnc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cupb2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25hic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvc5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpdfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvib6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g60y3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lylx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2eot2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2fxu")
+}],
+"loop": true,
+"name": &"skill",
+"speed": 5.0
+}]
+
+[node name="BOSS skill2" type="Area2D" unique_id=1326133613]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1575314780]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_abvp2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1935380606]
+position = Vector2(-23, 16)
+sprite_frames = SubResource("SpriteFrames_ej1mc")
+animation = &"skill"
+frame_progress = 0.055041213
