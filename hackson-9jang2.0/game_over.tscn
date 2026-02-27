@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://dj37hcdka0jju"]
 
-[ext_resource type="Texture2D" uid="uid://c0oh4eoa7wo35" path="res://art/Burger.png" id="1_y26ei"]
 [ext_resource type="Script" uid="uid://ysoqrgoaf0cp" path="res://game_over.gd" id="1_yxx3c"]
+[ext_resource type="Texture2D" uid="uid://b6nt5o6rkqqi2" path="res://art/game_over.jpg" id="2_yxx3c"]
 
 [node name="GameOver" type="Node" unique_id=1627567220]
 script = ExtResource("1_yxx3c")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=602438166]
-texture = ExtResource("1_y26ei")
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_yxx3c")
