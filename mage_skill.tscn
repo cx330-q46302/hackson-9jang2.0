@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://ddn423d2hq455"]
+
+[ext_resource type="Texture2D" uid="uid://c0i1oyto1tjip" path="res://art/monsters/Move.png" id="1_uv3go"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fekt"]
+atlas = ExtResource("1_uv3go")
+region = Rect2(0, 0, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp36h"]
+atlas = ExtResource("1_uv3go")
+region = Rect2(46, 0, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdjqn"]
+atlas = ExtResource("1_uv3go")
+region = Rect2(92, 0, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fexxe"]
+atlas = ExtResource("1_uv3go")
+region = Rect2(138, 0, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkkyv"]
+atlas = ExtResource("1_uv3go")
+region = Rect2(184, 0, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsrm3"]
+atlas = ExtResource("1_uv3go")
+region = Rect2(230, 0, 46, 46)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jiab1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fekt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wp36h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdjqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fexxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkkyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsrm3")
+}],
+"loop": true,
+"name": &"skill",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_on6um"]
+radius = 6.0
+
+[node name="mage skill" type="Area2D" unique_id=1260619832]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1276460766]
+sprite_frames = SubResource("SpriteFrames_jiab1")
+animation = &"skill"
+frame_progress = 0.7803768
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1257632549]
+position = Vector2(2, 0)
+shape = SubResource("CircleShape2D_on6um")
