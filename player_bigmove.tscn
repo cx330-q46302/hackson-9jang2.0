@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://cg7h6oxao4d8w"]
+
+[ext_resource type="Texture2D" uid="uid://bntf5bvtc3iaa" path="res://art/gura/guracall_1.png" id="1_aeoio"]
+[ext_resource type="Script" uid="uid://cv7t7fcf5r01k" path="res://player_bigmove.gd" id="1_u046g"]
+[ext_resource type="Texture2D" uid="uid://d206m1g2dm8ta" path="res://art/gura/guracall_2.png" id="2_u046g"]
+[ext_resource type="Texture2D" uid="uid://1rgic55x0dba" path="res://art/gura/guracall_3.png" id="3_fscud"]
+[ext_resource type="Texture2D" uid="uid://bnno0rh7vdlq" path="res://art/gura/guracall_4.png" id="4_uijx0"]
+[ext_resource type="Texture2D" uid="uid://hr3ynv18myf7" path="res://art/gura/guracall_5.png" id="5_nb1t1"]
+[ext_resource type="Texture2D" uid="uid://dwii2vft2j5rw" path="res://art/gura/guracall_6.png" id="6_xeahb"]
+[ext_resource type="Texture2D" uid="uid://c4hgr025hfjlx" path="res://art/gura/guracall_7.png" id="7_gaxrg"]
+[ext_resource type="Texture2D" uid="uid://0jf2av4o04ys" path="res://art/gura/guracall_8.png" id="8_jm6ne"]
+[ext_resource type="Texture2D" uid="uid://hvea4coo0igg" path="res://art/gura/guracall_9.png" id="9_afhs8"]
+[ext_resource type="Texture2D" uid="uid://b2xmcaxepecmt" path="res://art/gura/guracall_10.png" id="10_uqrp1"]
+[ext_resource type="Texture2D" uid="uid://c3ccmlb8r17rw" path="res://art/gura/guracall_11.png" id="11_tdlf1"]
+[ext_resource type="Texture2D" uid="uid://c0pcc14r4npyu" path="res://art/gura/guracall_12.png" id="12_2ak4q"]
+[ext_resource type="Texture2D" uid="uid://csi0gcalxsv3i" path="res://art/gura/guracall_13.png" id="13_akapi"]
+[ext_resource type="Texture2D" uid="uid://brn7pconmilh8" path="res://art/gura/guracall_14.png" id="14_7r53j"]
+[ext_resource type="Texture2D" uid="uid://4ptfsilnr3ku" path="res://art/gura/guracall_15.png" id="15_a36p0"]
+[ext_resource type="Texture2D" uid="uid://dq8qvjpu3hrvo" path="res://art/gura/guracall_16.png" id="16_pmc0c"]
+[ext_resource type="Texture2D" uid="uid://c17jw7vu85lcx" path="res://art/gura/guracall_17.png" id="17_lw3lj"]
+[ext_resource type="Texture2D" uid="uid://c4l84fn7dc0tq" path="res://art/gura/guracall_18.png" id="18_pjlni"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fscud"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf1hy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_aeoio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_u046g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fscud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uijx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nb1t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xeahb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gaxrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jm6ne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_afhs8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_uqrp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tdlf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2ak4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_akapi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7r53j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_a36p0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pmc0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_lw3lj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_pjlni")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 12.0
+}]
+
+[node name="Player_Bigmove" type="Area2D" unique_id=1499087028]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_u046g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=35834]
+shape = SubResource("CircleShape2D_fscud")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=901178778]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_yf1hy")
+animation = &"attack"
+frame = 9
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
