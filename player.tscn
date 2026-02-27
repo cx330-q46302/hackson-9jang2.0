@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://5sgy0k2htp7b"]
+
+[ext_resource type="Script" uid="uid://do5lfpq2dysdi" path="res://player.gd" id="1_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://wf6nrl3fcf2w" path="res://art/gura/bluegoldgura1.png" id="2_nvl01"]
+[ext_resource type="Texture2D" uid="uid://47x70inq4oeh" path="res://art/gura/bluegoldgura2.png" id="3_ivps1"]
+[ext_resource type="Texture2D" uid="uid://dfyoiarw1fi57" path="res://art/gura/bluegoldgura3.png" id="4_urp6f"]
+[ext_resource type="Texture2D" uid="uid://wnd4lbuiwebf" path="res://art/gura/bluegoldguraAttack1.png" id="5_bwjto"]
+[ext_resource type="Texture2D" uid="uid://csv6m46rhpgob" path="res://art/gura/bluegoldguraAttack2.png" id="6_606se"]
+[ext_resource type="Texture2D" uid="uid://h2tlxcr4enwx" path="res://art/gura/bluegoldguraAttack3.png" id="7_u1c27"]
+[ext_resource type="Texture2D" uid="uid://bixknongho76a" path="res://art/gura/bluegoldguraAttack4.png" id="8_op7ga"]
+[ext_resource type="Texture2D" uid="uid://dbc7u78j2wt0i" path="res://art/gura/bluegoldguraAttack5.png" id="9_q13i1"]
+[ext_resource type="Texture2D" uid="uid://db4vwjvr6maje" path="res://art/gura/bluegoldguraAttack6.png" id="10_pylmc"]
+[ext_resource type="Texture2D" uid="uid://cbfctwh2yiume" path="res://art/血條底色.png" id="11_ivps1"]
+[ext_resource type="Texture2D" uid="uid://dgbd8jfarqnj3" path="res://art/血條.png" id="12_urp6f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pbfsw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nvl01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ivps1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_urp6f")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_bwjto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_606se")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u1c27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_op7ga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q13i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pylmc")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5tmop"]
+radius = 16.0
+height = 44.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ivps1"]
+
+[node name="Player" type="CharacterBody2D" unique_id=2091840065]
+script = ExtResource("1_n7ghd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=362861999]
+sprite_frames = SubResource("SpriteFrames_pbfsw")
+animation = &"walk"
+frame_progress = 0.62420607
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1714345426]
+position = Vector2(6, 16)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_5tmop")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=902666059]
+position = Vector2(1, 12)
+zoom = Vector2(2, 2)
+
+[node name="HealthBar" type="TextureProgressBar" parent="." unique_id=458626210]
+offset_left = -13.0
+offset_top = -9.0
+offset_right = 519.0
+offset_bottom = 99.0
+scale = Vector2(0.05, 0.05)
+value = 100.0
+texture_under = ExtResource("11_ivps1")
+texture_progress = ExtResource("12_urp6f")
+
+[node name="MagnetArea" type="Area2D" parent="." unique_id=1744349263]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MagnetArea" unique_id=1642660148]
+position = Vector2(1, 13)
+shape = SubResource("CircleShape2D_ivps1")
+
+[connection signal="area_entered" from="MagnetArea" to="." method="_on_magnet_area_area_entered"]

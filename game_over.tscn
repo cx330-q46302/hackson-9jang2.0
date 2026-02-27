@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://3tcphpnjhyad"]
+
+[ext_resource type="Texture2D" uid="uid://c0oh4eoa7wo35" path="res://art/Burger.png" id="1_y26ei"]
+
+[node name="GameOver" type="Node" unique_id=1627567220]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=602438166]
+texture = ExtResource("1_y26ei")
