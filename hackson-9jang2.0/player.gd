@@ -33,16 +33,7 @@ func take_damage(amount):
 		die()
 
 func die():
-	# 1. 產生 Game Over 畫面# 注意：請確認檔案面板裡真的有一個檔案叫做 game_over.tscn
-	var scene = preload("res://game_over.tscn") 
-	if scene:
-		var game_over_instance = scene.instantiate() # 必須實例化！
-		# 2. 加入到當前的場景樹中
-		get_tree().root.add_child(game_over_instance)
-		# 3. 暫停遊戲邏輯
-		get_tree().paused = true
-	else:
-		print("錯誤：找不到 game_over.tscn 檔案，請檢查路徑與檔名！")
+	
 	
 # 每一幀 (Frame) 都會執行一次的函數，delta 是兩幀之間的時間間隔
 func _input(event):
